@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+    <script src="js/react.js"></script>
+    <script src="js/JSXTransformer.js"></script>
+    <style>
+      .collapsed {
+        color: grey;
+      }
+
+      li {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+  <p>测试before</p>
+  <script type="text/jsx">
+      /** @jsx React.DOM */
+      var PRODUCTS = [
+        {"id": 1, "name": "Bag of suck", "price": 100, "details": "You don't want to own this!"},
+        {"id": 2, "name": "Bag of luck", "price": 200, "details": "You might want to own this!"},
+        {"id": 3, "name": "Bag of fuck", "price": 300, "details": "You really want to own this!"}
+      ];
+
+      var Shop = React.createClass({
+        getInitialState: function() {
+          return {
+            expandedProductId: null
+          };
+        },
+
+        handleProductClick: function(product) {
+          var newSelectedProductId = product.id;
+
+          if (this.state.expandedProductId === product.id) {
+            newSelectedProductId = null;
+          }
+
+          this.setState({expandedProductId: newSelectedProductId});
+        },
+
+        render: function() {
+          var self = this, noneSelected = this.state.expandedProductId === null;
+
+          var products = PRODUCTS.map(function(product) {
+            var details, isExpanded = self.state.expandedProductId === product.id;
+
+            if (isExpanded) {
+              details = <div>{product.details}</div>;
+            }
+
+            return (
+                    <li key={product.id}
+                        onClick={self.handleProductClick.bind(self, product)}
+                        className={isExpanded || noneSelected ? '' : 'collapsed'}>
+                      {product.name} ({product.price})
+                      {details}
+                    </li>
+            );
+          });
+
+          return (
+                  <ul>
+                    {products}
+                  </ul>
+          );
+        }
+      });
+
+
+      React.render(<Shop />, document.getElementById('container'));
+
+    </script>
+  <div id="container"></div>
+  <p>测试after</p>
+  </body>
+</html>
