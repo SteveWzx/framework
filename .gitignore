@@ -1,0 +1,12 @@
+*.class
+*.idea
+.DS_Store
+.DS_Store?
+Thumbs.db
+node_modules/
+node_modules
+
+# Package Files #
+*.jar
+*.war
+*.ear
