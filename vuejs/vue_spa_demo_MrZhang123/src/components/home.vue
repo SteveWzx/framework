@@ -15,7 +15,7 @@
     </div>      
 </div>
 </template>
-<script>
+<script type="text/ecmascript-6">
 import  tab_1 from './tab/tab_1.vue';
 import  tab_2 from './tab/tab_2.vue';
 export default{

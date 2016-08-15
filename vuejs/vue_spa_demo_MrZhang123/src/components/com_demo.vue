@@ -48,7 +48,7 @@
         </div>
     </div>
 </template>
-<script>
+<script type="text/ecmascript-6">
 import detailChild from './communication.vue';
 export default{
     data(){
