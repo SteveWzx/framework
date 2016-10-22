@@ -5,11 +5,11 @@
             :need-add="true"
             :show-menu.sync="showMenu">
     </nv-head>
-    
+
     <section id="page">
         <!-- 首页列表 -->
         <ul class="posts-list">
-            <li v-for="item in topics"
+             <li v-for="item in topics"
                     v-link="{name:'topic',params:{id:item.id}}">
 
                 <h3 v-text="item.title"
