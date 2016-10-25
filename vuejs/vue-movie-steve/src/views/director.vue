@@ -1,6 +1,6 @@
 <template>
 	<div class="page" v-if="!$loadingRouteData" transition="fade">
-		<header-bar left="back" :title="title" right="search"></header-bar>
+		<header-bar :left="back" :title="title" :right="search"></header-bar>
 		<div class="banner">
 			<div class="blur" :style="{backgroundImage: 'url('+ image +')'}"></div>
 			<div class="info">
@@ -21,7 +21,7 @@
 		            </div>
 		            <div class="ui-list-info">
 		                <h4 class="ui-nowrap">[{{r.roles}}]{{r.subject.title}}</h4>
-		                <p class="ui-nowrap"><star :score="r.subject.rating.average"></app></p>
+		                <p class="ui-nowrap"><star :score="r.subject.rating.average"></star></p>
 		                <p class="ui-nowrap">{{r.subject.genres.join(' ')}}</p>
 		                <p class="ui-nowrap"><span v-for="cast in r.subject.casts">{{cast.name}} </span></p>
 		            </div>
