@@ -26,7 +26,7 @@
 	</div>
 	<nv-top></nv-top>
 </template>
-<script>
+<script type="text/ecmascript-6">
 	export default {
 		data : function() {
 			return {
@@ -50,7 +50,7 @@
 			}
 		},
 		ready : function() {
-			this.gerArtlist(this.initIndex);
+			this.gerArtlist();
 			$(window).on('scroll',() => {
                 this.scrollArtlist();
              });
@@ -62,7 +62,7 @@
 				this.searchKey.tab = this.itemTab[index].type;
 				this.artlist = [];
 				this.searchKey.limit = 20;
-				this.gerArtlist(this.initIndex);
+				this.gerArtlist();
 			},
 			// 获取数据方法
 			gerArtlist : function() {

@@ -14,6 +14,7 @@ Vue.use(VueRouter);
 Vue.use(VueResource);
 // 实例化过滤器
 // Vue.filter('getDateTime', filters.getDateTime);
+console.log(filters);
 Object.keys(filters).forEach(k => Vue.filter(k, filters[k]));
 
 // 创建一个空组件
