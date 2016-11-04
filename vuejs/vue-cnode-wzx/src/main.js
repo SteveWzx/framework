@@ -8,7 +8,7 @@ import FastClick from 'fastclick';
 
 Vue.use(VueRouter);
 
-$.ajaxSettings.crossDomain = true;
+//$.ajaxSettings.crossDomain = true;
 
 //实例化Vue的filter
 Object.keys(filters).forEach(k => Vue.filter(k, filters[k]));
