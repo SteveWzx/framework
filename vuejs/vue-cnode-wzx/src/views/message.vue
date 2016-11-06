@@ -1,5 +1,5 @@
 <template>
-    <nv-head page-type="消息" fix-head="true" :show-menu.sync="showMenu"
+    <nv-head :page-type="消息" :fix-head="true" :show-menu.sync="showMenu"
             :message-count="message.hasnot_read_messages.length" :need-add="true" ></nv-head>
     <div class="page" >
         <ul class="tabs">
@@ -55,8 +55,7 @@
                         _self.message = d.data;
                         if(d.data.hasnot_read_messages.length > 0){
                             _self.currentData = d.data.hasnot_read_messages;
-                        }
-                        else{
+                        }else{
                             _self.currentData = d.data.has_read_messages;
                             _self.selectItem = 2;
                         }

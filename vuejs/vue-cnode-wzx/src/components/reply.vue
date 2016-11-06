@@ -34,12 +34,10 @@
         },
         methods:{
             addReply (){
-
                 let _self = this;
                 if(!_self.content){
                     _self.hasErr = true;
-                }
-                else{
+                }else{
                     let time=new Date()
                         , linkUsers = utils.linkUsers(_self.content)
                         , htmlText = markdown.toHTML(linkUsers) + _self.authorTxt

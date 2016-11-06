@@ -6,21 +6,19 @@ import filters from './filters';
 import routerMap from './routers';
 import FastClick from 'fastclick';
 
-Vue.use(VueRouter);
-
-//$.ajaxSettings.crossDomain = true;
+FastClick.attach(document.body);
 
 //实例化Vue的filter
 Object.keys(filters).forEach(k => Vue.filter(k, filters[k]));
 
-//实例化VueRouter
+Vue.use(VueRouter);
 let router = new VueRouter({
     hashbang: true,
     history: false,
     saveScrollPosition: true,
     transitionOnLoad: true
 });
-FastClick.attach(document.body);
+routerMap(router);
 
 //登录中间验证，页面需要登录而没有登录的情况直接跳转登录
 router.beforeEach((transition) => {
@@ -40,6 +38,4 @@ router.beforeEach((transition) => {
 });
 
 let app = Vue.extend({});
-routerMap(router);
-
 router.start(app, "#app");

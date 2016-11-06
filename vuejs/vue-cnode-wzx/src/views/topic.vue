@@ -5,7 +5,7 @@
             fix-head="true">
     </nv-head>
 
-    <div id="page" 
+    <div id="page"
             v-class="show-menu:showMenu"
             v-if="topic.title">
 
@@ -144,8 +144,7 @@
                 let _self = this;
                 if(!_self.userId){
                     _self.$route.router.go('/login?redirect='+encodeURIComponent(this.$route.path));
-                }
-                else{
+                }else{
                     $.ajax({
                         type:'POST',
                         url:'https://cnodejs.org/api/v1/reply/'+item.id+'/ups',
@@ -156,8 +155,7 @@
                                 if(res.action == "down"){
                                     let index = $.inArray(_self.userId, item.ups);
                                     item.ups.splice(index,1);
-                                }
-                                else{
+                                }else{
                                     item.ups.push(_self.userId);
                                 }
                             }
