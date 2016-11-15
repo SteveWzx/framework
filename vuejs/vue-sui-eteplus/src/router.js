@@ -90,8 +90,7 @@ export default function (router) {
     console.log(`to: ${toPath} from: ${fromPath}`)
     if (toPath.replace(/[^/]/g, '').length > 1) {
       router.app.isIndex = false
-    }
-    else {
+    }else{
       let depath = toPath === '/' || toPath === '/invite' || toPath === '/rank'
       router.app.isIndex = depath ? 0 : 1
     }

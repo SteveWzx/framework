@@ -1,9 +1,9 @@
 <template>
 	<div :class="['ui-loading-block','show', near]" v-if="show">
-        <div class="ui-loading-cnt">
-            <i class="ui-loading-bright"></i>
-        </div>
-    </div>
+      <div class="ui-loading-cnt">
+          <i class="ui-loading-bright"></i>
+      </div>
+  </div>
 </template>
 
 <script>

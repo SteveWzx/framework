@@ -11,7 +11,7 @@ Vue.use(VueResource)
 
 //配置前端请求路径
 const configPath = '/src/mock/'
-window. configPath = configPath
+window.configPath = configPath
 
 Vue.http.options.headers = {
 	'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'
