@@ -1,3 +1,4 @@
+//exports.getDateTime = function(dataTime) {}
 exports.getDateTime = (dataTime) => {
 	let time = dataTime;
 	let str = time.substring(0, 10);

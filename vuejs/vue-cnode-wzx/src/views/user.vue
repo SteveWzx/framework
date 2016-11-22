@@ -54,8 +54,7 @@
                         _self.user = data;
                         if(data.recent_replies.length > 0){
                             _self.currentData = data.recent_replies;
-                        }
-                        else{
+                        }else{
                             _self.currentData = data.recent_topics;
                             _self.selectItem = 2;
                         }

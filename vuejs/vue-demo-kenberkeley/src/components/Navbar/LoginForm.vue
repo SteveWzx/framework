@@ -33,8 +33,13 @@ export default {
       userService
         .login({ username: this.username })
         .then((userSessData) => {
+<<<<<<< HEAD
           console.info('[LoginForm] 登录成功，立即设置 session 到 $root.userData')
           this.$root.userData = userSessData
+=======
+          console.info('[LoginForm] 登录成功，立即手动同步 $root.userData 与 userService.data')
+          this.$root.userData = userService.data = userSessData
+>>>>>>> 4e52d160ad8dbf59b841ef1b50801ab74c341b0c
         })
     }
   }

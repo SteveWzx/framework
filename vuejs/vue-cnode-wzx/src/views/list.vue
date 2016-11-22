@@ -1,7 +1,7 @@
 <template>
     <!-- 全局header -->
     <nv-head :page-type="searchKey.tab | getTitleStr"
-            fix-head="true"
+            :fix-head="true"
             :need-add="true"
             :show-menu.sync="showMenu">
     </nv-head>
@@ -44,7 +44,7 @@
     <nv-top></nv-top>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
     export default {
         data (){
             return {
@@ -82,8 +82,7 @@
                     this.topics = JSON.parse(sessionStorage.topics);
                     this.searchKey = JSON.parse(sessionStorage.searchKey);
                     this.$nextTick(()=> $(window).scrollTop(sessionStorage.scrollTop));
-                }
-                else{
+                }else{
                     //页面初次加载获取的数据
                     this.searchKey.tab = query.tab;
                     this.getTopics();
@@ -103,8 +102,7 @@
                     sessionStorage.topics = JSON.stringify(this.topics);
                     sessionStorage.searchKey = JSON.stringify(this.searchKey);
                     sessionStorage.tab = transition.from.query.tab || 'all';
-                }
-                else{
+                }else{
                     sessionStorage.removeItem("topics");
                     sessionStorage.removeItem("searchKey");
                     sessionStorage.removeItem("tab");

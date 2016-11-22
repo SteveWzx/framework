@@ -29,7 +29,11 @@ export default (time, type) => {
     case 0: // 01-05
       return `${zerofill(month)}-${zerofill(day)}`
     case 1: // 11:12
+<<<<<<< HEAD
       return `${zerofill(hours)}-${zerofill(minutes)}`
+=======
+      return `${zerofill(hours)}:${zerofill(minutes)}`
+>>>>>>> 4e52d160ad8dbf59b841ef1b50801ab74c341b0c
     case 2: // 2015-01-05
       return `${year}-${zerofill(month)}-${zerofill(day)}`
     case 3: // 2015-01-05 11:12

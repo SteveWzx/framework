@@ -29,8 +29,15 @@ export default {
       userService
         .logout()
         .then(() => {
+<<<<<<< HEAD
           console.info('[LogoutDropdown:XHR] 注销登录，立即清空 $root.userData 的 session')
           this.$root.userData = null
+=======
+          console.info('[LogoutDropdown:XHR:Route] 注销登录，立即手动同步 $root.userData 与 userService.data 并跳转到首页')
+
+          // 【手动】同步顶级变量与服务
+          this.$root.userData = userService.data = null
+>>>>>>> 4e52d160ad8dbf59b841ef1b50801ab74c341b0c
 
           // 跳转回首页
           this.$router.replace('/')

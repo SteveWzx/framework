@@ -16,7 +16,7 @@
     <nv-loading :show="loading.show" :show-txt="loading.showTxt"></nv-loading>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
     import {qrcode}  from '../libs/llqrcode'
 
     let browser = {

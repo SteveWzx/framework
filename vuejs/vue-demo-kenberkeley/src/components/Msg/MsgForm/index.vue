@@ -1,6 +1,10 @@
 <template src="./msg-form.html"></template>
 <script>
 import msgService from 'SERVICE/msgService'
+<<<<<<< HEAD
+=======
+import userService from 'SERVICE/userService'
+>>>>>>> 4e52d160ad8dbf59b841ef1b50801ab74c341b0c
 
 /**
  * 该组件由新增信息(/msg/add)与修改信息(/msg/modify/:msgId)所共用
@@ -31,7 +35,11 @@ export default {
       .fetch({ msgId })
       .then((msg) => {
         // 虽说后端会有过滤，但还是要严谨一点
+<<<<<<< HEAD
         if (!msg || msg.author !== this.$root.userData.username) {
+=======
+        if (!msg || msg.author !== userService.data.username) {
+>>>>>>> 4e52d160ad8dbf59b841ef1b50801ab74c341b0c
           setTimeout(() => { alert('非信息发布者无权修改') }) // 避免alert阻塞线程
           return this.$router.replace('/msg')
         }

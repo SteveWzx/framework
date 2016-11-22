@@ -60,8 +60,13 @@ export default {
         }
 
         // 【手动】同步顶级变量与服务
+<<<<<<< HEAD
         console.info('[Navbar] 检测完毕，当前用户已经登录，立即设置 session 到 $root.userData')
         this.$root.userData = userSessData
+=======
+        console.info('[Navbar] 检测完毕，当前用户已经登录，立即手动同步 $root.userData 与 userService.data')
+        this.$root.userData = userService.data = userSessData
+>>>>>>> 4e52d160ad8dbf59b841ef1b50801ab74c341b0c
       })
   }
 }
