@@ -11,6 +11,8 @@ FastClick.attach(document.body);
 //实例化Vue的filter
 Object.keys(filters).forEach(k => Vue.filter(k, filters[k]));
 
+$.ajaxSettings.crossDomain = true;
+
 Vue.use(VueRouter);
 let router = new VueRouter({
     hashbang: true,
