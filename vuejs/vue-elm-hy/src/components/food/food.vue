@@ -61,7 +61,10 @@
   import ratingselect from 'components/ratingselect/ratingselect';
   import split from 'components/split/split';
 
+  /* eslint-disable */
   const ALL = 2;
+  const POSITIVE = 0;
+  const NEGATIVE = 1;
 
   export default {
     props: {
