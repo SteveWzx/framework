@@ -1,0 +1,46 @@
+@import './partial/variables'
+
+pd-side = (20/75)rem
+ig-w = 1rem
+.item
+  display block
+  width ct-width
+  margin item-mg
+  box-shadow item-shadow
+  color color-font
+  &:active
+    background-color color-bg - 15
+  h3
+    padding (10/75)rem pd-side 0
+    display inline-block
+    font-size size-title
+    text-overflow ellipsis
+    max-width (ct-width - 2 * pd-side)rem
+    overflow hidden
+    white-space nowrap
+  .info-wrap
+    display flex
+    padding (10/75)rem pd-side
+  .user_avatar
+    display inline-block
+    width ig-w
+    height ig-w
+    img
+      border-radius 50%
+      width ig-w
+      height ig-w
+  .item-detail
+    display inline-flex
+    width (ct-width - ig-w - 2 * pd-side)
+    justify-content space-between
+    .i, .g
+      display flex
+      flex-direction column
+    .i
+      padding-left (20/75)rem
+    .g
+      padding-right (20/75)rem
+      text-align right
+            
+
+    
