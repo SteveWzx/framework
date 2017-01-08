@@ -1,4 +1,4 @@
-v-if=""<template>
+<template>
   <div class="panel" v-if="topic.reply_count !== 0">
     <div class="panel-header">
       {{ topic.reply_count }}条评论
