@@ -37,7 +37,7 @@ const mutations = {
         state.notes[i] = note;
         break;
       }
-    };
+    }
   },
   // 删除笔记
   DELETE_NOTE(state) {
