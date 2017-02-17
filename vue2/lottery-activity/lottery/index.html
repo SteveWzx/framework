@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>家长帮，抢鸿运！</title>
+    <style>
+    </style>
+  </head>
+  <script src="https://atths.jzb.com/website/public_js/ga/ga_generator.js?2016"></script>
+  <script src='https://atths.jzb.com/website/fe/pub_js/jzb.bridge.version1.6.3.js?v=1'></script>
+  <script>
+    var debug = true;
+    window.mDomain = "{{ php_activity_host }}";
+    if (debug) {
+      window.mDomain = "https://m-dev.jzb.com"
+    }
+    window.JzbBridge = JzbBridge;
+    window.userKey = debug ? '?api_key=6f301ca9a3FAUH9zgI05XMKB8e5%2FE6FdSO9EX29clS%2B7GIqVR5FNONSDJA%2Fg6q1MTCtI6Rbx485MyodCIxw10%2BT3pI8QuSY%2FiLKcWwRD%2FnhQ' : '';
+    window.gaFn = function (str) {
+      try {
+        ga('send', 'event', '家长帮社区', '春节活动', str)
+      } catch(err) {
+      }
+    }
+    window.open = "{{ open }}"
+  </script>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
+
