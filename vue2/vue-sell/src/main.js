@@ -13,7 +13,7 @@ Vue.use(VueResource);
 
 const routes = [{
   path: '/',
-  component: goods
+  redirect: '/goods'
 }, {
   path: '/goods',
   component: goods
@@ -36,16 +36,3 @@ new Vue({
   router,
   render: h => h(App)
 });
-
-/* eslint-disable */
-//将 h 作为 createElement 的别名是 Vue 生态系统中的一个通用惯例，实际上也是 JSX 所要求的，如果在作用域中 h 失去作用， 在应用中会触发报错。
-/*new Vue({
-  el: '#demo',
-  render (h) {
-    return (
-      <AnchoredHeading level={1}>
-      <span>Hello</span> world!
-    </AnchoredHeading>
-  )
-  }
-})*/
