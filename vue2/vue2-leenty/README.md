@@ -3,6 +3,37 @@
 使用 Material 风格
 后面会加入大量微动效
 
+# 环境
+nodejs >= v7.0 (当然，更新到最新也是极好的，可以享受最新功能)
+
+# 安装
+克隆仓库到本地
+```
+git clone git@github.com:leenty/vue2.git
+```
+安装依赖
+```
+npm i
+```
+创建文章并生成路由
+```
+npm run article -- -n 'demo'
+```
+生成文章路由
+```
+npm run article -- -r
+```
+
+# 新建文章及路由生成
+```
+   Usage: npm run article -- [[-n 'fileName'] | [-r] | [-h]]
+   or: node build/new-article.js [[-n 'fileName'] | [-r] | [-h]]
+
+   -n, --new 'fileName'  |  new article    新建文章
+   -r, --render          |  render router  渲染路由
+   -h, --help            |  help           帮助
+```
+
 # 当前css规则
 ```
 css命名使用 BEM+emmet 风格作为命名规范
