@@ -8,7 +8,6 @@
           :class="{active:index === nowIndex}"
           >{{ item.label }}</li>
         </ul>
-      </div>
     </div>
 </template>
 
