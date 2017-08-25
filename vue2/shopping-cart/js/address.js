@@ -22,7 +22,6 @@ var vm = new Vue({
 	methods: {
 		queryAddress: function () {
 			var _this = this;
-			let a= 3;
 			this.$http.get("data/address.json").then(function (response) {
 				var res = response.data;
 				if(res.status=="0"){
@@ -41,7 +40,6 @@ var vm = new Vue({
 		setDefaultAddress: function(addrId) {
 			var _this = this;
 			_this.addressList.forEach(function (item) {
-
 				if(item.addressId==addrId){
 					item.isDefault = true;
 				}else{
