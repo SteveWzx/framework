@@ -1,0 +1,14 @@
+// @import './base.css';
+$color : 'red';
+
+body{
+    color: $color;
+    transform: translate3d(1,1,1);
+    transition: transform 1s;
+    opacity: 1;
+    display: flex;
+}
+.box{
+    width: 20px;
+    height: 20px;
+}

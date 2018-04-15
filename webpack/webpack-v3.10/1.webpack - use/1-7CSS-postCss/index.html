@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="dist/app.min.css">
+</head>
+<body>
+<div id="app"></div>
+ 处理 css  ---  style-loader
+
+    引入
+        style-loader(创建style标签)
+            style-loader/url  // 打包出一个css文件，嵌入到页面中的是link 地址
+            style-loader/useable  // 是否插入，而且出现了两个方法 .use()  .unuse()
+
+            options ：
+                insertAt (插入位置)
+                insertInto (插入到dom)
+                singleton (是否只使用一个style标签)
+                transform(转化，浏览器环境下，插入页面前)
+        css-loader(让js import css模块)
+                alias (解析的别名)
+                importLoader (@import)
+                Minimize(是否压缩)
+                modules(启用css-modules)
+
+
+    CSS modules
+        :local
+        :global
+        compose
+        compose...from path
+        localIdentName:'[path][name]__[local]--[hash:base64:5]' // 修改css模块化名称
+
+    配置less / sass
+        npm install less-loader less --save-dev
+        npm install sass-loader node-sass --save-dev
+
+    提取css代码
+        extract-loader
+        ExtractTextWebpackPlugin(主流)         cnpm i webpack@3.10.0 extract-text-webpack-plugin --save-dev
+
+        自动提取出的app.min.css 并不会自动加载到页面中：如何处理？
+        手动添加
+
+
+    postcss
+        postcss
+        postcss-loader
+        Autoprefixer : 浏览器兼容前缀补全
+        postcss-cssnano ： 压缩
+
+
+<script src="./dist/app.bundle.js"></script>
+</body>
+</html>

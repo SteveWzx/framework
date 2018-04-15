@@ -1,0 +1,13 @@
+html{
+    background: pink;
+}
+.box{
+    composes: bigBox from './common.css' ;
+    height: 200px;
+    width: 200px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border-radius:20px;
+    /*border : 10px solid #ccc;*/
+    background: #333;
+}

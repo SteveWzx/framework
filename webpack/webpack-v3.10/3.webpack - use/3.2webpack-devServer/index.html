@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div class="big">
+        <div class="ani1"></div>
+        <div class="ani2"></div>
+        <div class="ani3"></div>
+        <div class="ani4"></div>
+        <span class="iconfont icon-dalishi"></span>
+        <span class="iconfont icon-daxiang"></span>
+        <img src="./src/assets/imgs/xyr.png" alt="啦啦">
+        <!--<img src="${require('./src/assets/imgs/xyr.png')}" alt="啦啦">  // 这样就可以不用使用html-loader,导致sprite路径报错，还是不要这样写-->
+    </div>
+</div>
+    搭建开发环境
+        webpack watch mode
+            webpack -watch
+            简化：webpack -w
+                    webpack -w --progress --display-reasons --color
+        webpack-dev-server
+                   功能： live reloading
+                            打包文件 ？ 不会，只会存在运行server的内存中
+                            路径重定向
+                            支持https
+                            浏览器中显示编译错误
+                            接口代理
+                            模块热更新
+                    devServer
+                        inline
+                        contentBase : 静态资源需要设置
+                        port ：端口
+                        historyApiFallback
+                        https
+                        proxy : 代理
+                        hot : 模块热更新
+                        openpage : 指定初始页面
+                        lazy
+                        overlay
+
+
+        express + webpack-dev-middleware
+
+</body>
+</html>

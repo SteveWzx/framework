@@ -1,0 +1,27 @@
+// @import './base.css';
+$color: 'red';
+body {
+    color: $color;
+}
+
+.box {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    background-image: url('./imgs/caodi.png');
+    background-size: cover;
+}
+
+.box_1 {
+    width: 118px;
+    height: 118px;
+    background-image: url('./imgs/sprite/cur_dress.png');
+    background-size: cover;
+}
+
+.box_2 {
+    width: 118px;
+    height: 118px;
+    background-image: url('./imgs/sprite/cur_land.png');
+    background-size: cover;
+}

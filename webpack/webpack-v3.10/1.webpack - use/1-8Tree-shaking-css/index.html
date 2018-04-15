@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./dist/app.min.css">
+</head>
+<body>
+<div id="app">
+    <div class="big"></div>
+</div>
+    Tree-shaking
+        css- tree-shaking
+            purify css
+                purifycss-webpack
+                    options :
+                        paths : glob.sync([])
+                npm install purify-css purifycss-webpack glob-all  --save-dev
+                必须放在extraTextWebpackPlugin 后边
+
+        js- tree-shaking
+            webpack.optimize.uglifyJS
+
+    使用场景
+        代码优化
+        引入第三方库的某一个功能
+<script src="./dist/app.bundle.js"></script>
+</body>
+</html>

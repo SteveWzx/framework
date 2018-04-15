@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app"></div>
+ 处理 css  ---  style-loader
+
+    引入
+        style-loader(创建style标签)
+            style-loader/url  // 打包出一个css文件，嵌入到页面中的是link 地址
+            style-loader/useable  // 是否插入，而且出现了两个方法 .use()  .unuse()
+
+            options ：
+                insertAt (插入位置)
+                insertInto (插入到dom)
+                singleton (是否只使用一个style标签)
+                transform(转化，浏览器环境下，插入页面前)
+        css-loader(让js import css模块)
+
+
+    CSS modules
+
+
+    配置less / sass
+
+
+    提取css代码
+
+ <script src="./dist/app.bundle.js"></script>
+</body>
+</html>

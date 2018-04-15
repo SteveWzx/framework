@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div class="box">
+        <div class="ani1"></div>
+        <div class="ani2"></div>
+        <div class="ani3"></div>
+        <div class="ani4"></div>
+        <span class="iconfont icon-dalishi"></span>
+        <span class="iconfont icon-daxiang"></span>
+        <img src="./src/assets/imgs/xyr.png" alt="啦啦">
+        <!--<img src="${require('./src/assets/imgs/xyr.png')}" alt="啦啦">  // 这样就可以不用使用html-loader,导致sprite路径报错，还是不要这样写-->
+    </div>
+</div>
+<div id="one"></div>
+    搭建开发环境
+        webpack watch mode
+            webpack -watch
+            简化：webpack -w
+                    webpack -w --progress --display-reasons --color
+        webpack-dev-server
+                   功能： live reloading
+                            打包文件 ？ 不会，只会存在运行server的内存中
+                            路径重定向
+                            支持https
+                            浏览器中显示编译错误
+                            接口代理
+                            模块热更新
+                    devServer
+                        inline
+                        contentBase : 静态资源需要设置
+                        port ：端口
+                        historyApiFallback
+                        https
+                        proxy : 代理远程接口请求
+                                http-proxy-middleware
+                                    options :
+                                        target
+                                        changeOrigin
+                                        headers
+                                        logLevel
+                                        pathRewrite
+                                使用:devServer.proxy
+                        hot : 模块热更新
+                            保持应用的数据状态
+                            节省调试时间
+                            样式调试更快
+                                devServer.hot
+                                webpack.HotModuleReplacementPlugin
+                                webpack.NamedModulesPlugin
+                                module.hot
+                                module.hot.accept
+                                module.hot.decline
+                        openpage : 指定初始页面
+                        lazy
+                        overlay
+        souceMap调试
+            Devtool
+            webpack.SourceMapDevToolPlugin
+            webpack.EvalSourceMapDevToolPlugin
+                Development
+                    eval
+                    eval-source-map
+                    cheap-eval-source-map
+                    cheap-module-eval-source-map
+                production
+                    source-map
+                    hidden-source-map
+                    nosource-source-map
+                css-loader.option.sourcemap
+                less-loader.option.sourcemap
+                sass-loader.option.sourcemap
+
+
+        express + webpack-dev-middleware
+
+    Eslint 检查代码格式
+        eslint
+        eslint-loader
+            options.failOnWarning
+            options.failOnError
+            options.formatter
+            options.outputReport
+        devServer.overlay
+        eslint-plugin-html
+        eslint-friendly-formatter
+     配置eslint
+        cnpm i eslint eslint-loader eslint-plugin-html eslint-friendly-formatter --save-dev
+        cnpm i eslint-config-standard eslint-plugin-promise eslint-plugin-node eslint-plugin-import eslint-plugin-standard --save-dev
+
+        webpack config
+        .eslintrc.*
+        package.json中的eslintConfig
+
+        javascript standard style
+        eslint-config-standard
+        eslint-plugin-promise
+        eslint-plugin-standard
+        eslint-plugin-import
+        eslint-plugin-node
+        eslint-config-xxx
+
+    开发环境和生产环境
+        开发环境
+            模块热更新
+            sourceMap
+            接口代理
+            代码规范检查
+        生产环境
+            提取公用代码
+            压缩混淆
+            文件压缩或base64编码
+            去除无用的代码
+        共同点：
+            同样的入口
+            同样的代码处理（loader处理）
+            同样的解析配置
+         如何做？
+            webpack-merge
+            webpack.dev.conf.js
+            webpack.prod.conf.js
+            webpack.common.conf.js
+
+    使用middleware搭建开发环境
+        express or Koa
+        webpack-dev-middleware
+        webpack-hot-middleware
+        http-proxy-middleware
+        connect-history-api-fallback
+        opn
+
+
+</body>
+</html>

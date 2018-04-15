@@ -1,0 +1,25 @@
+//@htmlColor : pink;
+//html{
+//    background: @htmlColor;
+//}
+$htmlColor : pink;
+html{
+    background: $htmlColor;
+}
+.box{
+    height: 200px;
+    width: 200px;
+    border-radius:20px;
+    /*border : 10px solid #ccc;*/
+    background: #333;
+    transition: transform 1s;
+}
+.big{
+    height: 20px;
+    width: 20px;
+    background: green;
+}
+
+.unuse{
+    background: #000;
+}

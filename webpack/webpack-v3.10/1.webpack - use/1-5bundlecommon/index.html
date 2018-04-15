@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提前公用代码</title>
+</head>
+<body>
+减少代码冗余
+提高加载速度
+
+    commonsChunkPlugin
+webpack.optimize.CommonsChunkPlugin
+
+    配置：
+        {
+        plugins : [
+            new webpack.optimize.CommonsChunkPlugin(option)
+        ]
+    }
+
+    options.name or options.names   // 表示chunk的名称
+    options.filename  // 表示公用代码的文件名
+    options.minChunks // 需要提取的公用代码最小出现的次数，多少次以上就会被提取（数字）
+    options.chunks // 指定提取的代码范围
+    options.children //
+    options.deepChildren // 是否在你的entry子模块，或者所有模块中查找共同依赖
+    options.async  //
+
+    场景：
+        单页应用
+        单页应用 + 第三方依赖
+        多页应用 + 第三方依赖 + webpack生成代码
+
+
+    在entry 只有一个 pageA 时， webpack 并没有把 moduleA 提取出来，因为
+        webpack 代码提取功能是针对多entry 的
+
+    在entry 中，使用vendor可以将第三方引用包和我们的代码区分开
+
+
+</body>
+</html>

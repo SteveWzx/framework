@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     https://doc.webpack-china.org/loaders/
+     约定loader一览表
+        扩展名	语义	loader举例
+        .js	returns module exports	babel-loader
+        .ts	returns module exports	ts-loader
+        .coffee	returns module exports	coffee-loader coffee-redux-loader
+        .jsx	returns module exports (react component)	jsx-loader react-hot-loader!jsx-loader
+        .json .json5	returns json value	json-loader json5-loader
+        .txt	return string value	raw-loader
+        .css	returns nothing, side effect of adding style to DOM	style-loader!css-loader style-loader!css-loader!autoprefixer-loader
+        .less	returns nothing, side effect of adding style to DOM	style-loader!css-loader!less-loader
+        .scss	returns nothing, side effect of adding style to DOM	style-loader!css-loader!scss-loader
+        .styl	returns nothing, side effect of adding style to DOM	style-loader!css-loader!stylus-loader
+        .png .jpg .jpeg .gif .svg	returns url to image	file-loader url-loader
+        .woff .ttf	returns url to font	file-loader url-loader
+        .wav .mp3	returns url to audio	file-loader url-loader
+        .mpeg .mp4 .webm .ogv	returns url to video	file-loader
+        .html	returns HTML as string	html-loader
+        .md .markdown	returns HTML as string	html-loader!markdown-loader
+        .jade	returns template function	jade-loader
+        .hbs .handlebars	returns template function	handlebars-loader
+
+</body>
+</html>

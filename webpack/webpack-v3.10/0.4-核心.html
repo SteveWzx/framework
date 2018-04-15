@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // entry ------------------------------------------------------------
+        // : 代码的入口 打包的入口 单个或者多个
+
+    // module.exports = {
+    //     // entry: 'index.js'
+    //     // entry: ['index.js','vendor.js']
+    //     // entry :{  // 推荐方式 -- 有key value 可以方便知道对应信息
+    //     //     index : 'index.js'
+    //     // }
+    // }
+
+    // output ------------------------------------------------------------
+    //     : 打包成的文件（bundle） 一个或多个 自定义规则 配置CDN
+    // module.exports = {
+    //     entry : 'index.js',
+    //     output :{
+    //         filename:'index.min.js'
+    //     }
+    // }
+    // module.exports = {
+    //     entry : {
+    //         index : 'index.js',
+    //         vendor : 'vendor.js'
+    //     },
+    //     output :{
+    //         filename:'[name].min.[hash:5].js'
+    //     }
+    // }
+
+
+    // loader ------------------------------------------------------------
+    //     :处理文件 转化为模块
+    // module.exports = {
+    //     module : {
+    //         rules : [
+    //             {
+    //                 test : /\.css$/,
+    //                 use : 'css-loader'
+    //             }
+    //         ]
+    //     }
+    // }
+
+ /*   常用的loader :
+        编译相关：
+            babel-loader , ts-loader
+        样式相关：
+            style-loader , css-loader , less-loader ,postcss-loader
+        文件相关：
+            file-loader , url-loader  */
+
+    // plugins ------------------------------------------------------------
+    //     : 参与打包整个过程 打包优化和压缩 配置编译时的变量 灵活
+
+    // const webpack = require('webpack');
+    // module.exports = {
+    //     plugins : [
+    //         new webpack.optimize.UglifyJsPlugin()
+    //     ]
+    // }
+
+    // 常用的Plugins
+
+        // 优化相关
+        //     CommonsChunkPlugin
+        //         : 提取不同的chunk 之间相同的代码
+        //     UglifyjsWebpackPlugin
+        //         : 混淆压缩js代码的，还可以生产sourceMap
+        // 功能相关
+        //     ExtractTextWebpackPlugin
+        //         : 把js中的css提取出来，做为一个单独的文件
+        //     HtmlWebpackPlugin
+        //         : 生成html
+        //     HotModuleReplacementPlugin
+        //         : 模块热更新
+        //     CopyWebpackPlugin
+        //         : 在webpack中拷贝文件和文件夹
+
+
+    // 名词 ------------------------------------------------------
+    //     chunk 代码块
+    //     bundle 打包过的代码
+    //     module 模块
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+body{
+    font-size: 12px;
+}
+.bigBox {
+    border:2px solid #000;
+}
+
+:root{
+    --mainColor: #333;
+}
+
+a{
+    color: var(--mainColor);
+}

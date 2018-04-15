@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+        body{
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+         webpack 3中hash、chunkhash和contenthash三者的区别
+             在使用webpack 3中，文件名的hash值可以有三种hash生成方式，那具体使用哪一种呢？
+             1.hash 如果都使用hash的话，所有文件的hash都是一样的，而且每次修改任何一个文件，所有文件名的hash至都将改变。所以一旦修改了任何一个文件，整个项目的文件缓存都将失效。
+          
+            
+            2.chunkhash 既然hash的用法有这种缺陷，那是否有更好的办法，使只有被修改了的文件的文件名hash值修改呢？答案就是使用chunkhash。
+         
+            当然这样做还是有问题，就是如果我一个js文件里面引入了css文件。这时要是我修改了js，但没修改css，能否让css能够继续利用缓存呢？答案是可以！
+            首先，我们使用Extract-text-webpack-plugin插件将css文件从js中分离出来。
+             <!-- cnpm i extract-text-webpack-plugin --save-dev -->
+             { test: /\.css$/, 
+                use: ExtractTextPlugin.extract({ fallback: "style-loader",
+                                                use: { loader:"css-loader", options:{ minimize: true //css压缩
+                                                 } } }) }, 
+             然后设置css的plugin
+              new ExtractTextPlugin({
+                        filename: 'css/[name]-[chunkhash].css'
+                     })
+            
+            3.contenthash 对css使用了chunkhash之后，我们测试会发现，如果修改了js直接，css文件名的hash值确实没变，但这时要是我们修改css文件的话，我们就会发现css文件名的hash值居然没变化，这样就导致我们的非覆盖发布css文件失效了。
+            所以这里需要注意就是css文件必须使用contenthash。将上面的css插件配置改为如下：
+            new ExtractTextPlugin({ filename: 'css/[name]-[contenthash].css', }),
+    
+        <script>
+            console.log(1);
+            console.log(1);
+            console.log(1);
+            console.log(1);
+            console.log(1);
+            console.log(1);
+            
+        </script>
+</body>
+</html>

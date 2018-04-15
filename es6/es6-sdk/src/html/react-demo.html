@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>注册-手机验证</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="../css/register.less" />
+</head>
+<body id="login">
+    @@include('./templates/header.html', {})
+    @@include('./templates/step.html', {"step": "2"})
+    <div id="container"></div>
+    @@include('./templates/footer.html', {})
+    <script src="https://cdn.bootcss.com/react/16.1.1/umd/react.production.min.js" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.1.1/umd/react-dom.production.min.js" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/babel-core/5.8.34/browser.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../lib/vendors.js"></script>
+    <script type="text/javascript" src="../js/register/info/init.js"></script>
+    <script type="text/babel">
+      class RegisterInfo extends React.Component {
+        constructor(props) {
+          super(props)
+        }
+        componentDidMount() {
+          pass.regInfo({
+            container: this.refs.container,
+            success: this.props.success
+          })
+        }
+
+        render() {
+          return (<div ref="container"></div>)
+        }
+      }
+
+      class RegisterWrapper extends React.Component {
+        render() {
+          var success = function() {
+            location.replace('register-payment.html')
+          }
+          return (
+            <RegisterInfo success={success} />
+          )
+        }
+      }
+
+      ReactDOM.render(
+        <RegisterWrapper />,
+        document.getElementById('container')
+      )
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+npm init  //初始化  文件名不可以带汉字以及空格
+npm install babel-loader babel-core --save-dev  // 安装 babel-loader babel-core
+npm install babel-loader@8.0.0-beta.0 @babel/core --save-dev
+
+babel-loader 根据 babel-presets规范（es2015, es2016,es2017,env,babel-preset-react,babel-preset-stage 0 -3）进行解析js
+
+如果安装的是 beta 版本， 需要使用 npm install @babel/preset-env --save-dev
+如果安装的是 稳定版本 ， 需要使用 npm install babel-preset-env --save-dev
+
+preset 是针对的语法
+
+对于未实行的方法以及函数，需要借助 : babel polyfill  以及  babel runtime transform
+
+babel polyfill :
+    全局垫片
+    为应用准备
+    npm install babel-polyfill --save
+    import 'babel-polyfill'
+
+babel runtime transform :
+    局部垫片
+    为开发框架准备
+    npm install babel-plugin-transform-runtime --save-dev
+    npm install babel-runtime --save
+
+//上方安装的beta版本，所有需要安装
+    npm install @babel/plugin-transform-runtime --save-dev
+    npm install @babel/runtime --save
+    .babelrc
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div class="big">
+        <div class="ani1"></div>
+        <div class="ani2"></div>
+        <div class="ani3"></div>
+        <div class="ani4"></div>
+        <span class="iconfont icon-dalishi"></span>
+        <span class="iconfont icon-daxiang"></span>
+        <img src="./src/assets/imgs/xyr.png" alt="啦啦">
+        <!--<img src="${require('./src/assets/imgs/xyr.png')}" alt="啦啦">  // 这样就可以不用使用html-loader,导致sprite路径报错，还是不要这样写-->
+    </div>
+</div>
+<div id="one"></div>
+    搭建开发环境
+        webpack watch mode
+            webpack -watch
+            简化：webpack -w
+                    webpack -w --progress --display-reasons --color
+        webpack-dev-server
+                   功能： live reloading
+                            打包文件 ？ 不会，只会存在运行server的内存中
+                            路径重定向
+                            支持https
+                            浏览器中显示编译错误
+                            接口代理
+                            模块热更新
+                    devServer
+                        inline
+                        contentBase : 静态资源需要设置
+                        port ：端口
+                        historyApiFallback
+                        https
+                        proxy : 代理远程接口请求
+                                http-proxy-middleware
+                                    options :
+                                        target
+                                        changeOrigin
+                                        headers
+                                        logLevel
+                                        pathRewrite
+                                使用:devServer.proxy
+                        hot : 模块热更新
+                            保持应用的数据状态
+                            节省调试时间
+                            样式调试更快
+                                devServer.hot
+                                webpack.HotModuleReplacementPlugin
+                                webpack.NamedModulesPlugin
+                                module.hot
+                                module.hot.accept
+                                module.hot.decline
+                        openpage : 指定初始页面
+                        lazy
+                        overlay
+        souceMap调试
+            Devtool
+            webpack.SourceMapDevToolPlugin
+            webpack.EvalSourceMapDevToolPlugin
+                Development
+                    eval
+                    eval-source-map
+                    cheap-eval-source-map
+                    cheap-module-eval-source-map
+                production
+                    source-map
+                    hidden-source-map
+                    nosource-source-map
+                css-loader.option.sourcemap
+                less-loader.option.sourcemap
+                sass-loader.option.sourcemap
+
+
+        express + webpack-dev-middleware
+
+</body>
+</html>

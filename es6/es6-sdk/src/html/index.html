@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <style>
+        #container1 {
+            width: 200px;
+            background-color: blue;
+            overflow: hidden;
+        }
+        #container1 .left {
+            float: left;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+        #container1 .right {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+        }
+     
+        #container2 {
+            margin-top: 50px;
+            width: 200px;
+            height: 100px;
+            background: blue;
+        }
+        #container2 .left {
+            float: left;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+        #container2 .right {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            overflow: hidden;
+        }
+
+        #container3 {
+            margin-top: 50px;
+            width: 200px;
+            background-color: blue;
+            overflow: hidden;
+        }
+        #container3 .left {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            background-color: red;
+        }
+        #container3 .right {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="container1">
+        <div class="left"></div>    
+        <div class="right"></div>
+    </div> 
+    <div id="container2">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <div id="container3">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+    <script type="text/javascript" src="../lib/vendors.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript" src="../js/lesson/main.js"></script>
+
+    <script>
+        window.onload = () => {
+            console.log(document.getElementById('container1').style.width);  // 只有设置在 style 里面的可以获取
+            // console.log(document.getElementById('container').currentStyle.width);    // 仅仅 ie 下可用
+            console.log(window.getComputedStyle(document.getElementById('container1')).width)    // 200px
+            console.log(document.getElementById('container1').getBoundingClientRect().width)     // 200
+        }
+    </script>
+</body>
+</html>
