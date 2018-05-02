@@ -33,4 +33,7 @@ export default new Router({
             component: Download,
         },
     ],
+    scrollBehavior (to, from, savedPosition) {
+        return { x: 0, y: 0 }
+    }
 })
