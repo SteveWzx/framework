@@ -111,7 +111,7 @@ var page = {
                     data.list[i].isActive = true;
                     selectedAddressIdFlag = true;
                 }
-            };
+            }
             // 如果以前选中的地址不在列表里，将其删除
             if(!selectedAddressIdFlag){
                 this.data.selectedAddressId = null;

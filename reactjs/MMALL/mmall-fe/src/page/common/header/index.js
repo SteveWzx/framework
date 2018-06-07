@@ -19,7 +19,7 @@ var header = {
         // keyword存在，则回填输入框
         if(keyword){
             $('#search-input').val(keyword);
-        };
+        }
     },
     bindEvent : function(){
         var _this = this;

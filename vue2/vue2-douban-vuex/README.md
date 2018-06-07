@@ -12,6 +12,7 @@
 对于只在当前组件有效的数据,应该使用local state。
 # demo
 [demo](http://www.iamsuperman.cn/vue-vuex-router-template/#/)
+[项目演示](http://chenhuichao.com/vue-vuex-router-template/#/)
 
 ## Build Setup
 

@@ -1,4 +1,5 @@
 # Change Log
+[项目演示]http://chenhuichao.com/vue2.x-douban/dist/#/
 * 2017-3-15：新增 node 服务转发 api 请求
 * 2017-3-17：增加在线[访问地址](http://www.iamsuperman.cn/vue2.x-douban/dist/#/)，node 服务转发 api 请求部署到 heroku
 # 运行项目

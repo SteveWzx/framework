@@ -27,7 +27,7 @@ const template = (opts = {}) => {
         </label>
         <label class="login-account-wrapper">
           <span class="password-label">${opts.passwordLabel}</span>
-          <input id="login-password" name="password" type="text" placeholder="${opts.passwordPlaceholder}" autocomplate="${autocompleteValue}" valid="present" />
+          <input id="login-password" name="password" type="password" placeholder="${opts.passwordPlaceholder}" autocomplate="${autocompleteValue}" valid="present" />
         </label>
         <input id="login-btn" class="login-btn" type="submit" value="${opts.loginBtnText}">
         <div class="login-extra-wrapper">
