@@ -47,17 +47,20 @@
         let start = this.movieList.subjects.length;
         this.busy = true;
         this.isScroll = true;
-        fetchMoviesByType(this.type, start)
-                .then(data => {
-                  this.movieList.title = data.title;
-                  this.movieList.total = data.total;
-                  this.movieList.subjects = this.movieList.subjects.concat(data.subjects);
-                  if (this.movieList.subjects.length < this.movieList.total) {
-                    this.busy = false;
-                  }
-                  this.loading = false;
-                  this.isScroll = false;
-                })
+        if (this.isScroll) {
+          fetchMoviesByType(this.type, start)
+            .then(data => {
+              this.movieList.title = data.title;
+              this.movieList.total = data.total;
+              this.movieList.subjects = this.movieList.subjects.concat(data.subjects);
+              if (this.movieList.subjects.length < this.movieList.total) {
+                this.busy = false;
+              }
+              this.loading = false;
+              this.isScroll = false;
+            })
+        }
+
       }
     },
     destroyed(){

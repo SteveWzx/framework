@@ -1,7 +1,7 @@
 <template>
     <div>
         <button @click="increment">+</button>
-        <button v-on:click="decrement">-</button>
+        <button @click="decrement">-</button>
         <p><span>{{num}}</span></p>
     </div>
 </template>
